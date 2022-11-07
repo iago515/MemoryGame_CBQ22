@@ -56,7 +56,6 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_multi_players);
 
-
         tv_p1 = findViewById(R.id.tv_player1);
         tv_p2 = findViewById(R.id.tv_player2);
 
