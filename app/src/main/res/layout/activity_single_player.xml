@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_500"
+    android:background="@drawable/background"
     tools:context="SinglePlayerActivity">
 
 
     <include
         android:id="@+id/include"
         layout="@layout/images"
-        android:layout_width="354dp"
-        android:layout_height="649dp"
+        android:layout_width="378dp"
+        android:layout_height="646dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.659" />
 
     <TextView
         android:id="@+id/tv_player1"
@@ -28,10 +29,10 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_tempo"
@@ -42,10 +43,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <Chronometer
         android:id="@+id/tv_chronometro"
@@ -56,10 +57,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.260"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <TextView
         android:id="@+id/tv_passos"
@@ -70,11 +71,49 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.798"
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.063" />
 
+    <ImageView
+        android:id="@+id/imageViewP1"
+        android:layout_width="38dp"
+        android:layout_height="33dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_player"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageViewTime"
+        android:layout_width="38dp"
+        android:layout_height="28dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_time"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <ImageView
+        android:id="@+id/imageViewSteps"
+        android:layout_width="36dp"
+        android:layout_height="25dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_steps"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.067" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

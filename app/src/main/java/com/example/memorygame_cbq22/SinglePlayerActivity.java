@@ -665,7 +665,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 iv_40.setVisibility(View.INVISIBLE);
             }
 
-            //Adcionar pontos aos jogadores corretos
+            //Adicionar pontos ao jogador
             if (turn == 1) {
                 player1Points++;
                 tv_p1.setText("Player 1: " + player1Points);
