@@ -1,8 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name"></string>
-    <string name="Menu_options_language">Idioma</string>
+
+    <!-- Seleção de Idiomas-->
+    <string-array name="Lista_idiomas">
+        <item name="Default">Padrão</item>
+        <item name="PortuguesBR">Português Br</item>
+        <item name="EnglishUSA">English USA</item>
+    </string-array>
+
+    <string name="Selection_language">Alterar idioma</string>
     <string name="Menu_options_moreinfo">Mais informações</string>
     <string name="Menu_options_exit">Sair do jogo</string>
 
+    <!-- Activity Principal  -->
+    <string name="This_game">MEMOQUÍMICA É UM DOS JOGOS INTERATIVOS SOBRE QUÍMICA</string>
+    <string name="Text_Objective">OBJETIVO: ASSOCIAR FÓRMULAS DE COMPOSTOS INORGÂNICOS COM SEU RESPECTIVO NOME</string>
+    <string name="Objective_tittle">OBJETIVO:</string>
+    <string name="Start">INICIAR</string>
+    <string name="Single_Player">1 JOGADOR</string>
+    <string name="Multi_Player">2 JOGADOR</string>
+
+    <!-- Modo Jogo   -->
+    <string name="time">Tempo:</string>
+    <string name="steps">Passos:</string>
 
 </resources>

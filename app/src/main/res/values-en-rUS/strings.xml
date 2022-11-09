@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"></string>
+
+    <!-- Language Selection -->
+    <string-array name="Lista_idiomas">
+        <item name="Default">Default</item>
+        <item name="PortuguesBR">Português Br</item>
+        <item name="EnglishUSA">English USA</item>
+    </string-array>
+
+    <string name="Selection_language">Select a language</string>
+    <string name="Menu_options_moreinfo">More Information</string>
+    <string name="Menu_options_exit">Exit the game</string>
+
+    <!-- Activity Main  -->
+    <string name="This_game">MEMOCHEMISTRY IS ONE OF THE INTERACTIVE GAMES ABOUT CHEMISTRY</string>
+    <string name="Text_Objective">OBJECTIVE: ASSOCIATE INORGANIC COMPOUND FORMULAS WITH THEIR RESPECTIVE NAME</string>
+    <string name="Objective_tittle">OBJECTIVE:</string>
+    <string name="Start">START</string>
+    <string name="Single_Player">1 PLAYER</string>
+    <string name="Multi_Player">2 PLAYERS</string>
+
+    <!-- Game Mode -->
+    <string name="time">Time: </string>
+    <string name="steps">Steps: </string>
+
+</resources>

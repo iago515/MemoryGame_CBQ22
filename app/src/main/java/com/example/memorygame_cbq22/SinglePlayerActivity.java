@@ -22,7 +22,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
     private Chronometer chro;
 
-    TextView tv_p1;
+    TextView tv_p1, tv_steps;;
 
     ImageView iv_1, iv_2, iv_3, iv_4, iv_5, iv_6, iv_7, iv_8, iv_9, iv_10, iv_11, iv_12, iv_13, iv_14, iv_15, iv_16, iv_17, iv_18, iv_19, iv_20,
             iv_21, iv_22, iv_23, iv_24, iv_25, iv_26, iv_27, iv_28, iv_29, iv_30, iv_31, iv_32, iv_33, iv_34, iv_35, iv_36, iv_37, iv_38, iv_39, iv_40;
@@ -42,7 +42,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
 
     int turn = 1;
-    int player1Points = 0;
+    int player1Points = 0, Steps = 0;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -56,7 +56,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_single_player);
 
-
+        tv_steps = findViewById(R.id.tv_passos);
         tv_p1 = findViewById(R.id.tv_player1);
 
         iv_1 = findViewById(R.id.iv_1);
@@ -669,9 +669,14 @@ public class SinglePlayerActivity extends AppCompatActivity {
             if (turn == 1) {
                 player1Points++;
                 tv_p1.setText("Player 1: " + player1Points);
+                Steps++;
+                tv_steps.setText("Passos: "+ Steps);
             }
 
         } else {
+            Steps++;
+            tv_steps.setText("Passos: "+ Steps);
+
             iv_1.setImageResource(R.drawable.back_image);
             iv_2.setImageResource(R.drawable.back_image);
             iv_3.setImageResource(R.drawable.back_image);
@@ -802,12 +807,12 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 iv_39.getVisibility() == View.INVISIBLE &&
                 iv_40.getVisibility() == View.INVISIBLE) {
 
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SinglePlayerActivity.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SinglePlayerActivity.this, android.R.style.Theme_Black);
             alertDialogBuilder
-                    .setMessage("Fim de jogo!\nPlayer 1: " + player1Points + "\n ")
+                    .setMessage("Fim de jogo!\nPlayer 1: " + player1Points + "\nPassos: " + Steps + "\n ")
                     .setCancelable(false)
                     .setPositiveButton("Novo Jogo", (dialog, i) -> {
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), SinglePlayerActivity.class);
                         finish();
                     })
                     .setNegativeButton("Tela Inicial", (dialog, i) -> finish());

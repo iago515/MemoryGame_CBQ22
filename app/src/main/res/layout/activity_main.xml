@@ -20,10 +20,11 @@
             app:layout_constraintVertical_bias="0.06"
             app:srcCompat="@drawable/logo" />
 
-        <ImageView
+
+        <ImageButton
             android:id="@+id/Button_Config"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,15 +32,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.022"
-            app:srcCompat="@drawable/icon_config" />
-
+            app:srcCompat="@drawable/icon_config"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/Text_ThisGame"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_mono"
-            android:text="MEMOQUÍMICA É UM DOS JOGOS INTERATIVOS SOBRE QUÍMICA"
+            android:text="@string/This_game"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -56,7 +57,7 @@
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_mono"
-            android:text="         ASSOCIAR FÓRMULAS DE COMPOSTOS INORGÂNICOS COM SEU RESPECTIVO NOME"
+            android:text="@string/Text_Objective"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp"
@@ -73,14 +74,14 @@
             android:layout_width="132dp"
             android:layout_height="31dp"
             android:fontFamily="@font/roboto_mono"
-            android:text="OBJETIVO:"
+            android:text="@string/Objective_tittle"
             android:textAlignment="center"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/Text_objective"
             app:layout_constraintEnd_toEndOf="@+id/Text_objective"
-            app:layout_constraintHorizontal_bias="0.207"
+            app:layout_constraintHorizontal_bias="0.18"
             app:layout_constraintStart_toStartOf="@+id/Text_objective"
             app:layout_constraintTop_toTopOf="@+id/Text_objective"
             app:layout_constraintVertical_bias="0.0" />
@@ -92,7 +93,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="INICIAR"
+            android:text="@string/Start"
             android:fontFamily="@font/roboto_mono"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -111,7 +112,7 @@
             android:backgroundTint="#fe8c1a"
             android:onClick="Button_SinglePlayer"
             android:fontFamily="@font/roboto_mono"
-            android:text="1 JOGADOR"
+            android:text="@string/Single_Player"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,7 +128,7 @@
             android:backgroundTint="#fe8c1a"
             android:onClick="Button_MultiPlayers"
             android:fontFamily="@font/roboto_mono"
-            android:text="2 JOGADORES"
+            android:text="@string/Multi_Player"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

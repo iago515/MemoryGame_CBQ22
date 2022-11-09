@@ -116,7 +116,7 @@
         app:layout_constraintTop_toTopOf="@+id/include"
         app:layout_constraintVertical_bias="0.0" />
 
-    //Tempo
+    //chronometro - tempo
     <ImageView
         android:id="@+id/imageViewTime"
         android:layout_width="38dp"
@@ -134,7 +134,7 @@
         android:id="@+id/tv_tempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tempo: "
+        android:text="@string/time"
         android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
@@ -148,7 +148,6 @@
         android:id="@+id/tv_chronometro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tempo:"
         android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
@@ -176,7 +175,7 @@
         android:id="@+id/tv_passos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passos: 0"
+        android:text="@string/steps"
         android:textColor="#040404"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"

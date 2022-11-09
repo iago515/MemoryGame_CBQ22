@@ -4,9 +4,8 @@
 
     <item
         android:id="@+id/Menu_option_language"
-        android:title="@string/Menu_options_language"/>
-        //android:icon="@drawable/icon_config"
-        //app:showAsAction="always"/>
+        android:title="@string/Selection_language"/>
+
     <item
         android:id="@+id/Menu_option_moreinfo"
         android:title="@string/Menu_options_moreinfo"/>

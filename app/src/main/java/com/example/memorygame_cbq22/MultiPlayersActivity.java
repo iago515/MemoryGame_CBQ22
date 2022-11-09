@@ -22,7 +22,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
     private Chronometer chro;
 
-    TextView tv_p1, tv_p2;
+    TextView tv_p1, tv_p2, tv_steps;
 
     ImageView iv_1, iv_2, iv_3, iv_4, iv_5, iv_6, iv_7, iv_8, iv_9, iv_10, iv_11, iv_12, iv_13, iv_14, iv_15, iv_16, iv_17, iv_18, iv_19, iv_20,
             iv_21, iv_22, iv_23, iv_24, iv_25, iv_26, iv_27, iv_28, iv_29, iv_30, iv_31, iv_32, iv_33, iv_34, iv_35, iv_36, iv_37, iv_38, iv_39, iv_40;
@@ -42,7 +42,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
 
     int turn = 1;
-    int player1Points = 0, player2Points = 0;
+    int player1Points = 0, player2Points = 0, Steps = 0;
 
     @SuppressLint("CutPasteId")
     @Override
@@ -56,6 +56,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_multi_players);
 
+        tv_steps = findViewById(R.id.tv_passos);
         tv_p1 = findViewById(R.id.tv_player1);
         tv_p2 = findViewById(R.id.tv_player2);
 
@@ -144,7 +145,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
         //Carregar as imagens das cartas
         frontOfCardsResources();
 
-        //Shuffle de imagens/embaralhamento
+        //Shuffle - método de embaralhamento
         Collections.shuffle(Arrays.asList(cardsArray));
 
         //Cronometro
@@ -152,7 +153,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
         this.chro = chronometer;
         chronometer.start();
 
-        //troca a cor do jogador(quando inativo)
+        //troca a cor do jogador de acordo com o seu turno
         tv_p2.setTextColor(Color.GRAY);
 
         iv_1.setOnClickListener(view -> {
@@ -346,8 +347,9 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
 
     //identificar e setar as imagens corretas para o imageView
-
     private void doStuff(ImageView iv, int card) {
+        //OBS: O jogo necessita de uma carta A e uma carta B, no diretorio de imagens, existem 2 iguais, mas com nomes diferentes.
+        //Então as cartas A foram nomeadas com numeração na familia do 100(101,102,103..) e as cartas B na familia dos 200 (201, 202, 203...)
         if (cardsArray[card] == 101) {
             iv.setImageResource(image101);
         } else if (cardsArray[card] == 102) {
@@ -388,6 +390,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
             iv.setImageResource(image119);
         } else if (cardsArray[card] == 120) {
             iv.setImageResource(image120);
+
             //familia do 200
         } else if (cardsArray[card] == 201) {
             iv.setImageResource(image201);
@@ -431,16 +434,17 @@ public class MultiPlayersActivity extends AppCompatActivity {
             iv.setImageResource(image220);
         }
 
-        //Checa a imagem selecionada e salva ela como uma variavel temporaria
+        //Pega a imagem selecionada e salva ela como uma variavel temporaria
         if (cardNumber == 1) {
             firstCard = cardsArray[card];
             if (firstCard > 200) {
                 firstCard = firstCard - 100;
             }
+
             cardNumber = 2;
             clickedFirst = card;
-
             iv.setEnabled(false);
+
         } else if (cardNumber == 2) {
             secondCard = cardsArray[card];
             if (secondCard > 200) {
@@ -492,192 +496,201 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
             Handler handler = new Handler();
             handler.postDelayed(() -> {
-                //Checar se as imagens selecionadas são iguais
+
                 calculate();
             }, 800);
 
         }
 
     }
-
+    //Checar se as imagens selecionadas são iguais
+    //se as cartas forem iguais, serão adicionados pontos ao player e contabilizara os passos.
     @SuppressLint("SetTextI18n")
     private void calculate() {
-        //se as cartas forem iguais, remove-las e add pontos
         if (firstCard == secondCard) {
             if (clickedFirst == 0) {
-                iv_1.setVisibility(View.INVISIBLE);
+                iv_1.findViewById(R.id.iv_1);
             } else if (clickedFirst == 1) {
-                iv_2.setVisibility(View.INVISIBLE);
+                iv_2.findViewById(R.id.iv_2);
             } else if (clickedFirst == 2) {
-                iv_3.setVisibility(View.INVISIBLE);
+                iv_3.findViewById(R.id.iv_3);
             } else if (clickedFirst == 3) {
-                iv_4.setVisibility(View.INVISIBLE);
+                iv_4.findViewById(R.id.iv_4);
             } else if (clickedFirst == 4) {
-                iv_5.setVisibility(View.INVISIBLE);
+                iv_5.findViewById(R.id.iv_5);
             } else if (clickedFirst == 5) {
-                iv_6.setVisibility(View.INVISIBLE);
+                iv_6.findViewById(R.id.iv_6);
             } else if (clickedFirst == 6) {
-                iv_7.setVisibility(View.INVISIBLE);
+                iv_7.findViewById(R.id.iv_7);
             } else if (clickedFirst == 7) {
-                iv_8.setVisibility(View.INVISIBLE);
+                iv_8.findViewById(R.id.iv_8);
             } else if (clickedFirst == 8) {
-                iv_9.setVisibility(View.INVISIBLE);
+                iv_9.findViewById(R.id.iv_9);
             } else if (clickedFirst == 9) {
-                iv_10.setVisibility(View.INVISIBLE);
+                iv_10.findViewById(R.id.iv_10);
             } else if (clickedFirst == 10) {
-                iv_11.setVisibility(View.INVISIBLE);
+                iv_11.findViewById(R.id.iv_11);
             } else if (clickedFirst == 11) {
-                iv_12.setVisibility(View.INVISIBLE);
+                iv_12.findViewById(R.id.iv_12);
             } else if (clickedFirst == 12) {
-                iv_13.setVisibility(View.INVISIBLE);
+                iv_13.findViewById(R.id.iv_13);
             } else if (clickedFirst == 13) {
-                iv_14.setVisibility(View.INVISIBLE);
+                iv_14.findViewById(R.id.iv_14);
             } else if (clickedFirst == 14) {
-                iv_15.setVisibility(View.INVISIBLE);
+                iv_15.findViewById(R.id.iv_15);
             } else if (clickedFirst == 15) {
-                iv_16.setVisibility(View.INVISIBLE);
+                iv_16.findViewById(R.id.iv_16);
             } else if (clickedFirst == 16) {
-                iv_17.setVisibility(View.INVISIBLE);
+                iv_17.findViewById(R.id.iv_17);
             } else if (clickedFirst == 17) {
-                iv_18.setVisibility(View.INVISIBLE);
+                iv_18.findViewById(R.id.iv_18);
             } else if (clickedFirst == 18) {
-                iv_19.setVisibility(View.INVISIBLE);
+                iv_19.findViewById(R.id.iv_19);
             } else if (clickedFirst == 19) {
-                iv_20.setVisibility(View.INVISIBLE);
+                iv_20.findViewById(R.id.iv_20);
             } else if (clickedFirst == 20) {
-                iv_21.setVisibility(View.INVISIBLE);
+                iv_21.findViewById(R.id.iv_21);
             } else if (clickedFirst == 21) {
-                iv_22.setVisibility(View.INVISIBLE);
+                iv_22.findViewById(R.id.iv_22);
             } else if (clickedFirst == 22) {
-                iv_23.setVisibility(View.INVISIBLE);
+                iv_23.findViewById(R.id.iv_23);
             } else if (clickedFirst == 23) {
-                iv_24.setVisibility(View.INVISIBLE);
+                iv_24.findViewById(R.id.iv_24);
             } else if (clickedFirst == 24) {
-                iv_25.setVisibility(View.INVISIBLE);
+                iv_25.findViewById(R.id.iv_25);
             } else if (clickedFirst == 25) {
-                iv_26.setVisibility(View.INVISIBLE);
+                iv_26.findViewById(R.id.iv_26);
             } else if (clickedFirst == 26) {
-                iv_27.setVisibility(View.INVISIBLE);
+                iv_27.findViewById(R.id.iv_27);
             } else if (clickedFirst == 27) {
-                iv_28.setVisibility(View.INVISIBLE);
+                iv_28.findViewById(R.id.iv_28);
             } else if (clickedFirst == 28) {
-                iv_29.setVisibility(View.INVISIBLE);
+                iv_29.findViewById(R.id.iv_29);
             } else if (clickedFirst == 29) {
-                iv_30.setVisibility(View.INVISIBLE);
+                iv_30.findViewById(R.id.iv_30);
             } else if (clickedFirst == 30) {
-                iv_31.setVisibility(View.INVISIBLE);
+                iv_31.findViewById(R.id.iv_31);
             } else if (clickedFirst == 31) {
-                iv_32.setVisibility(View.INVISIBLE);
+                iv_32.findViewById(R.id.iv_32);
             } else if (clickedFirst == 32) {
-                iv_33.setVisibility(View.INVISIBLE);
+                iv_33.findViewById(R.id.iv_33);
             } else if (clickedFirst == 33) {
-                iv_34.setVisibility(View.INVISIBLE);
+                iv_34.findViewById(R.id.iv_34);
             } else if (clickedFirst == 34) {
-                iv_35.setVisibility(View.INVISIBLE);
+                iv_35.findViewById(R.id.iv_35);
             } else if (clickedFirst == 35) {
-                iv_36.setVisibility(View.INVISIBLE);
+                iv_36.findViewById(R.id.iv_36);
             } else if (clickedFirst == 36) {
-                iv_37.setVisibility(View.INVISIBLE);
+                iv_37.findViewById(R.id.iv_37);
             } else if (clickedFirst == 37) {
-                iv_38.setVisibility(View.INVISIBLE);
+                iv_38.findViewById(R.id.iv_38);
             } else if (clickedFirst == 38) {
-                iv_39.setVisibility(View.INVISIBLE);
+                iv_39.findViewById(R.id.iv_39);
             } else if (clickedFirst == 39) {
-                iv_40.setVisibility(View.INVISIBLE);
+                iv_40.findViewById(R.id.iv_40);
             }
 
             if (clickedSecond == 0) {
-                iv_1.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 1) {
-                iv_2.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 2) {
-                iv_3.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 3) {
-                iv_4.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 4) {
-                iv_5.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 5) {
-                iv_6.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 6) {
-                iv_7.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 7) {
-                iv_8.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 8) {
-                iv_9.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 9) {
-                iv_10.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 10) {
-                iv_11.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 11) {
-                iv_12.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 12) {
-                iv_13.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 13) {
-                iv_14.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 14) {
-                iv_15.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 15) {
-                iv_16.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 16) {
-                iv_17.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 17) {
-                iv_18.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 18) {
-                iv_19.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 19) {
-                iv_20.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 20) {
-                iv_21.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 21) {
-                iv_22.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 22) {
-                iv_23.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 23) {
-                iv_24.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 24) {
-                iv_25.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 25) {
-                iv_26.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 26) {
-                iv_27.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 27) {
-                iv_28.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 28) {
-                iv_29.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 29) {
-                iv_30.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 30) {
-                iv_31.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 31) {
-                iv_32.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 32) {
-                iv_33.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 33) {
-                iv_34.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 34) {
-                iv_35.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 35) {
-                iv_36.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 36) {
-                iv_37.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 37) {
-                iv_38.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 38) {
-                iv_39.setVisibility(View.INVISIBLE);
-            } else if (clickedSecond == 39) {
-                iv_40.setVisibility(View.INVISIBLE);
+                iv_1.findViewById(R.id.iv_1);
+            } else if (clickedFirst == 1) {
+                iv_2.findViewById(R.id.iv_2);
+            } else if (clickedFirst == 2) {
+                iv_3.findViewById(R.id.iv_3);
+            } else if (clickedFirst == 3) {
+                iv_4.findViewById(R.id.iv_4);
+            } else if (clickedFirst == 4) {
+                iv_5.findViewById(R.id.iv_5);
+            } else if (clickedFirst == 5) {
+                iv_6.findViewById(R.id.iv_6);
+            } else if (clickedFirst == 6) {
+                iv_7.findViewById(R.id.iv_7);
+            } else if (clickedFirst == 7) {
+                iv_8.findViewById(R.id.iv_8);
+            } else if (clickedFirst == 8) {
+                iv_9.findViewById(R.id.iv_9);
+            } else if (clickedFirst == 9) {
+                iv_10.findViewById(R.id.iv_10);
+            } else if (clickedFirst == 10) {
+                iv_11.findViewById(R.id.iv_11);
+            } else if (clickedFirst == 11) {
+                iv_12.findViewById(R.id.iv_12);
+            } else if (clickedFirst == 12) {
+                iv_13.findViewById(R.id.iv_13);
+            } else if (clickedFirst == 13) {
+                iv_14.findViewById(R.id.iv_14);
+            } else if (clickedFirst == 14) {
+                iv_15.findViewById(R.id.iv_15);
+            } else if (clickedFirst == 15) {
+                iv_16.findViewById(R.id.iv_16);
+            } else if (clickedFirst == 16) {
+                iv_17.findViewById(R.id.iv_17);
+            } else if (clickedFirst == 17) {
+                iv_18.findViewById(R.id.iv_18);
+            } else if (clickedFirst == 18) {
+                iv_19.findViewById(R.id.iv_19);
+            } else if (clickedFirst == 19) {
+                iv_20.findViewById(R.id.iv_20);
+            } else if (clickedFirst == 20) {
+                iv_21.findViewById(R.id.iv_21);
+            } else if (clickedFirst == 21) {
+                iv_22.findViewById(R.id.iv_22);
+            } else if (clickedFirst == 22) {
+                iv_23.findViewById(R.id.iv_23);
+            } else if (clickedFirst == 23) {
+                iv_24.findViewById(R.id.iv_24);
+            } else if (clickedFirst == 24) {
+                iv_25.findViewById(R.id.iv_25);
+            } else if (clickedFirst == 25) {
+                iv_26.findViewById(R.id.iv_26);
+            } else if (clickedFirst == 26) {
+                iv_27.findViewById(R.id.iv_27);
+            } else if (clickedFirst == 27) {
+                iv_28.findViewById(R.id.iv_28);
+            } else if (clickedFirst == 28) {
+                iv_29.findViewById(R.id.iv_29);
+            } else if (clickedFirst == 29) {
+                iv_30.findViewById(R.id.iv_30);
+            } else if (clickedFirst == 30) {
+                iv_31.findViewById(R.id.iv_31);
+            } else if (clickedFirst == 31) {
+                iv_32.findViewById(R.id.iv_32);
+            } else if (clickedFirst == 32) {
+                iv_33.findViewById(R.id.iv_33);
+            } else if (clickedFirst == 33) {
+                iv_34.findViewById(R.id.iv_34);
+            } else if (clickedFirst == 34) {
+                iv_35.findViewById(R.id.iv_35);
+            } else if (clickedFirst == 35) {
+                iv_36.findViewById(R.id.iv_36);
+            } else if (clickedFirst == 36) {
+                iv_37.findViewById(R.id.iv_37);
+            } else if (clickedFirst == 37) {
+                iv_38.findViewById(R.id.iv_38);
+            } else if (clickedFirst == 38) {
+                iv_39.findViewById(R.id.iv_39);
+            } else if (clickedFirst == 39) {
+                iv_40.findViewById(R.id.iv_40);
             }
 
-            //Adcionar pontos aos jogadores corretos
+
+            //Adicionar pontos aos jogadores corretos e ao contador de passos.
             if (turn == 1) {
                 player1Points++;
                 tv_p1.setText("Player 1: " + player1Points);
+                Steps++;
+                tv_steps.setText("Passos: "+ Steps);
+
             } else if (turn == 2) {
                 player2Points++;
                 tv_p2.setText("Player 2: " + player2Points);
+                Steps++;
+                tv_steps.setText("Passos: "+ Steps);
             }
 
         } else {
+            Steps++;
+            tv_steps.setText("Passos: "+ Steps);
+
             iv_1.setImageResource(R.drawable.back_image);
             iv_2.setImageResource(R.drawable.back_image);
             iv_3.setImageResource(R.drawable.back_image);
@@ -821,7 +834,7 @@ public class MultiPlayersActivity extends AppCompatActivity {
 
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MultiPlayersActivity.this);
             alertDialogBuilder
-                    .setMessage("Fim de jogo!\nPlayer 1: " + player1Points + "\nPlayer 2: " + player2Points)
+                    .setMessage("Fim de jogo!\nPlayer 1: " + player1Points + "\nPlayer 2: " + player2Points + "\nPassos: " + Steps + "\n ")
                     .setCancelable(false)
                     .setPositiveButton("Novo Jogo", (dialog, i) -> {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
