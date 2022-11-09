@@ -8,82 +8,6 @@
     android:background="@drawable/background_home"
     tools:context=".MainActivity">
 
-        <ImageView
-            android:id="@+id/Logo_PT"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.500"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.06"
-            app:srcCompat="@drawable/logo" />
-
-        <ImageView
-            android:id="@+id/Button_Config"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:scaleType="centerInside"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.957"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022"
-            app:srcCompat="@drawable/icon_config" />
-
-
-        <TextView
-            android:id="@+id/Text_ThisGame"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_mono"
-            android:text="MEMOQUÍMICA É UM DOS JOGOS INTERATIVOS SOBRE QUÍMICA"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.187" />
-
-        <TextView
-            android:id="@+id/Text_objective"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_mono"
-            android:text="         ASSOCIAR FÓRMULAS DE COMPOSTOS INORGÂNICOS COM SEU RESPECTIVO NOME"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.604"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.376" />
-
-        <TextView
-            android:id="@+id/Text_objective_tittered"
-            android:layout_width="132dp"
-            android:layout_height="31dp"
-            android:fontFamily="@font/roboto_mono"
-            android:text="OBJETIVO:"
-            android:textAlignment="center"
-            android:textColor="@android:color/holo_red_dark"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/Text_objective"
-            app:layout_constraintEnd_toEndOf="@+id/Text_objective"
-            app:layout_constraintHorizontal_bias="0.207"
-            app:layout_constraintStart_toStartOf="@+id/Text_objective"
-            app:layout_constraintTop_toTopOf="@+id/Text_objective"
-            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/Text_Iniciar"
@@ -93,16 +17,15 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="INICIAR"
-            android:fontFamily="@font/roboto_mono"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="28sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.585" />
+            app:layout_constraintVertical_bias="0.581" />
 
         <Button
             android:id="@+id/Button_SinglePlayer"
@@ -110,9 +33,7 @@
             android:layout_height="55dp"
             android:backgroundTint="#fe8c1a"
             android:onClick="Button_SinglePlayer"
-            android:fontFamily="@font/roboto_mono"
             android:text="1 JOGADOR"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -126,9 +47,7 @@
             android:layout_height="55dp"
             android:backgroundTint="#fe8c1a"
             android:onClick="Button_MultiPlayers"
-            android:fontFamily="@font/roboto_mono"
             android:text="2 JOGADORES"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -136,8 +55,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.821" />
 
-
-
-
+        <ImageButton
+            android:id="@+id/Configuracao"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.023"
+            app:srcCompat="@drawable/icon_config" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
